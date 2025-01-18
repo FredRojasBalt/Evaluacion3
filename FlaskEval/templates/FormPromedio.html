@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/static/css/common.css">
+    <title>Calculo del Promedio</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Formulario de Notas y Asistencia</h1>
+        <form action="/FormPromedio" method="POST">
+            <label for="nota1">Ingresa Nota 1 :</label>
+            <br>
+            <input type="number" id="nota1" name="nota1" required>
+            <br>
+            <label for="nota2">Ingresa Nota 2 : </label>
+            <br>
+            <input type="number" id="nota2" name="nota2" required>
+            <br>
+            <label for="nota3">Ingresa Nota 3 : </label>
+            <br>
+            <input type="number" id="nota3" name="nota3" required>
+            <br>
+            <label for="asist1">Ingresa Asistencia (%): </label>
+            <br>
+            <input type="number" id="asist1" name="asist1" required>
+            <br>
+            <button type="submit">Calcular</button>
+        </form>
+        {% if resultado %}
+        <div>
+            <p>El promedio es de : {{ resultado }}</p>
+            <p>Y esta : {{ estado }}</p>
+        </div>
+        {% endif %}
+        {% if error %}
+        <div>
+            <h3>{{ error }}</h3>
+        </div>
+        {% endif %}
+    </div>
+</body>
+
+</html>

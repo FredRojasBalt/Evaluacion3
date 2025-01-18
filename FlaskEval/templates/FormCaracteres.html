@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/static/css/common.css">
+    <title>Cual Nombre es mas Largo</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Comparacion de Nombres</h1>
+        <form action="/FormCaracteres" method="POST">
+            <label for="nombre1">Nombre 1:</label>
+            <br>
+            <input type="text" id="nombre1" name="nombre1" required>
+            <br>
+            <label for="nombre2">Nombre 2:</label>
+            <br>
+            <input type="text" id="nombre2" name="nombre2" required>
+            <br>
+            <label for="nombre3">Nombre 3:</label>
+            <br>
+            <input type="text" id="nombre3" name="nombre3" required>
+            <br>
+            <button type="submit">Calcular</button>
+        </form>
+        {% if resultado %}
+        <div>
+            <p>El nombre mas largo es : {{ resultado }}</p>
+            <p>Y econtiene - {{ cant }} - numero de caracteres</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
